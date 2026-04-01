@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Header } from "./components/Header.jsx";
-import useMovies from "./components/useMovies.jsx";
+import useMovies from "./hooks/useMovies.jsx";
 import { SearchBar } from "./components/SearchBar.jsx";
 import { StatusMessage } from "./components/StatusMessage.jsx";
 import { MovieList } from "./components/MovieList.jsx";
