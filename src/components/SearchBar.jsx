@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { FaSearch, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
+import { MdOutlineSearch } from "react-icons/md";
 
 export function SearchBar({ onSearch }) {
   const [searchInput, setSearchInput] = useState("");
@@ -14,14 +15,14 @@ export function SearchBar({ onSearch }) {
 
   return (
     <div className="relative group w-full max-w-2xl">
-      <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 transition-colors duration-300 pointer-events-none group-focus-within:text-white" />
+      <MdOutlineSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 transition-colors duration-300 pointer-events-none group-focus-within:text-white" />
 
       <input
         type="text"
         placeholder="Search movies, shows, genres..."
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
-        className="w-full py-3 pl-12 pr-12 text-white bg-zinc-900/40 border border-white/10 rounded-full outline-none backdrop-blur-md transition-all duration-300 placeholder:text-zinc-500 hover:bg-zinc-900/60 hover:border-white/20 focus:bg-zinc-900/80 focus:border-white/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
+        className="w-full py-3 pl-12 pr-12 text-white bg-neutrol-950 border border-zinc-700 rounded-full outline-none transition-all duration-300 placeholder:text-zinc-500 hover:bg-neutrol-900 hover:border-zinc-500 focus:bg-neutrol-800 focus:border-neutrol-500 focus:shadow-[0_0_15px_rgba(255,255,255,0.15)]"
       />
 
       {searchInput && (

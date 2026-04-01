@@ -11,7 +11,7 @@ export function StatusMessage({ isLoading, error, movies, searchTerm }) {
 
   if (error) {
     return (
-      <p className="text-red-400 text-center bg-red-900/20 py-2 rounded-lg">
+      <p className="text-red-400 text-center bg-red-900/20 p-2 rounded-lg">
         {error}
       </p>
     );
