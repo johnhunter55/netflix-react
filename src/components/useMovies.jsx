@@ -8,6 +8,7 @@ export default function useMovies(searchTerm) {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    let ignore = false;
     if (!searchTerm) {
       setMovies([]);
       setError("");
@@ -24,16 +25,23 @@ export default function useMovies(searchTerm) {
         );
 
         if (!response.ok) {
-          throw new Error("Something went wrong with fetching movies");
+          throw new Error("Something went wrong finding the movies");
         }
-
+        if (ignore) return;
         const data = await response.json();
 
         if (data.Response === "False") {
           throw new Error("Movie not found");
         }
-
-        setMovies(data.Search);
+        const filterd = [];
+        const seenMovies = data.Search.filter((movie) => {
+          if (filterd.includes(movie.imdbID)) {
+            return false;
+          }
+          filterd.push(movie.imdbID);
+          return true;
+        });
+        setMovies(seenMovies);
         setError("");
       } catch (err) {
         setError(err.message);
@@ -43,6 +51,10 @@ export default function useMovies(searchTerm) {
     }
 
     fetchMovies();
+
+    return () => {
+      ignore = true;
+    };
   }, [searchTerm]);
 
   return { movies, isLoading, error };

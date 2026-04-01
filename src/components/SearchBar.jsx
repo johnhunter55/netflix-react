@@ -7,7 +7,9 @@ export function SearchBar({ onSearch }) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      onSearch(searchInput);
+      if (searchInput.length === 0 || searchInput.length > 1) {
+        onSearch(searchInput);
+      }
     }, 500);
 
     return () => clearTimeout(timer);

@@ -12,7 +12,7 @@ export function MovieCard({ movie }) {
         <img
           src={posterUrl}
           alt={movie.Title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 text-neutral-300"
         />
       </div>
 
