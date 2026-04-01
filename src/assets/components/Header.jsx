@@ -6,7 +6,7 @@ export function Header() {
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Netflix_Logomark.png"
         alt="Netflix"
-        className="w-32 ml-2"
+        className="w-40 ml-2"
       />
       <div className="flex gap-4 mr-5 text-neutral-400">
         <p>Series</p>
