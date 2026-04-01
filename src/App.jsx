@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Header } from "./assets/components/Header.jsx";
-import useMovies from "./assets/components/useMovies.jsx";
-import { SearchBar } from "./assets/components/SearchBar.jsx";
-import { StatusMessage } from "./assets/components/StatusMessage.jsx";
-import { MovieList } from "./assets/components/MovieList.jsx";
+import { Header } from "./components/Header.jsx";
+import useMovies from "./components/useMovies.jsx";
+import { SearchBar } from "./components/SearchBar.jsx";
+import { StatusMessage } from "./components/StatusMessage.jsx";
+import { MovieList } from "./components/MovieList.jsx";
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState("");
