@@ -23,3 +23,13 @@ var for isLoading and error, fetch sets isLoading = true, if fails or false erro
 talking to api and getting what i want
 
 maybe a login to set preferences or a filter to do either show or movie on search
+
+ROUTING:
+
+javascript handles the navigation without reloading
+
+because react routing will make them into a tags anway but better
+
+child route will render inside parent
+
+makes everything easy and prevents reloads
