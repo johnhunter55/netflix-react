@@ -1,36 +1,26 @@
 import React, { useState } from "react";
 import { Header } from "./components/Header.jsx";
-import useMovies from "./hooks/useMovies.jsx";
-import { SearchBar } from "./components/SearchBar.jsx";
-import { StatusMessage } from "./components/StatusMessage.jsx";
-import { MovieList } from "./components/MovieList.jsx";
+import { Routes, Route, NavLink } from "react-router-dom";
+import { Movies } from "./components/Movies.jsx";
+import { About } from "./components/About.jsx";
+import { Home } from "./components/Home.jsx";
 
 export default function App() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const { movies, isLoading, error } = useMovies(searchTerm);
-
+  const navLinkStyle = ({ isActive }) =>
+    isActive
+      ? "text-white font-bold"
+      : "text-neutral-400 hover:text-white transition-colors";
   return (
-    <div className="flex flex-col bg-neutral-800 h-screen w-full items-center">
+    <div className="flex flex-col bg-neutral-800 h-screen w-full items-center overflow-hidden">
       <Header />
-      <div className="flex flex-col w-full items-center overflow-y-auto relative flex-1">
-        <div className="sticky top-0 z-10 flex flex-col w-full items-center gap-5 py-6 bg-neutral-800/70 backdrop-blur-xl ">
-          <h1 className="text-white text-3xl font-bold text-center px-4">
-            Search for movies, shows, and more
-          </h1>
 
-          <StatusMessage
-            isLoading={isLoading}
-            error={error}
-            movies={movies}
-            searchTerm={searchTerm}
-          />
-
-          <SearchBar onSearch={setSearchTerm} />
-        </div>
-        <div className="w-full max-w-screen-2xl px-6 pt-6 pb-12">
-          <MovieList movies={movies} />
-        </div>
-      </div>
+      <main className="flex-1 w-full overflow-y-auto">
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
+      </main>
     </div>
   );
 }

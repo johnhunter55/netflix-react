@@ -25,3 +25,7 @@
 *::-webkit-scrollbar-thumb:hover {
   background-color: #52525b; /* Lightens up slightly when you hover over it */
 }
+
+.active {
+  color: white;
+}

@@ -1,4 +1,8 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import { Movies } from "./Movies.jsx";
+import { About } from "./About.jsx";
+import { Home } from "./Home.jsx";
 
 export function Header() {
   return (
@@ -9,9 +13,9 @@ export function Header() {
         className="w-40 ml-2"
       />
       <div className="flex gap-4 mr-5 text-neutral-400">
-        <p>Series</p>
-        <p>Movies</p>
-        <p>New & Popular</p>
+        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/movies">Movies</NavLink>
+        <NavLink to="/About">About</NavLink>
         <p className="text-neutral-300 mx-2">Account</p>
       </div>
     </div>
