@@ -24,7 +24,7 @@ export function SearchBar({ onSearch }) {
         placeholder="Search movies, shows, genres..."
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
-        className="w-full py-3 pl-12 pr-12 text-white bg-neutrol-950 border border-zinc-700 rounded-full outline-none transition-all duration-300 placeholder:text-zinc-500 hover:bg-neutrol-900 hover:border-zinc-500 focus:bg-neutrol-800 focus:border-neutrol-500 focus:shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+        className="w-full py-3 pl-12 pr-12 text-white bg-neutral-900/30 border border-zinc-700 rounded-full outline-none transition-all duration-300 placeholder:text-zinc-500 hover:bg-neutral-900/50 hover:border-zinc-500 focus:bg-neutral-800 focus:border-neutral-500 focus:shadow-[0_0_15px_rgba(255,255,255,0.15)]"
       />
 
       {searchInput && (

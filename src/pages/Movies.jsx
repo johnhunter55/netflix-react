@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Header } from "./Header.jsx";
 import useMovies from "../hooks/useMovies.jsx";
-import { SearchBar } from "./SearchBar.jsx";
-import { StatusMessage } from "./StatusMessage.jsx";
-import { MovieList } from "./MovieList.jsx";
+import { SearchBar } from "../components/SearchBar.jsx";
+import { StatusMessage } from "../components/StatusMessage.jsx";
+import { MovieList } from "../components/MovieList.jsx";
+import { NavLink } from "react-router-dom";
 
 export function Movies() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,11 +11,13 @@ export function Movies() {
 
   return (
     <div className="flex flex-col w-full items-center relative">
-      <div className="sticky top-0 z-10 flex flex-col w-full items-center gap-5 py-6 bg-neutral-800/70 backdrop-blur-xl ">
+      <div className="w-full pt-6 pb-1">
         <h1 className="text-white text-3xl font-bold text-center px-4">
           Search for movies, shows, and more
         </h1>
+      </div>
 
+      <div className="sticky top-0 z-10 flex flex-col items-center gap-5 pt-4 pb-6 w-full bg-neutral-800/70 backdrop-blur-xl ">
         <StatusMessage
           isLoading={isLoading}
           error={error}

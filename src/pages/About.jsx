@@ -1,5 +1,4 @@
 import React from "react";
-import { Header } from "./Header.jsx";
 
 export function About() {
   return (
